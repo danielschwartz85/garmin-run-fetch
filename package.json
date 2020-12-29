@@ -10,12 +10,12 @@
   },
   "keywords": ["garmin", "connect", "run", "scrapping", "data", "activity", "api"],
   "author": "Daniel Schwartz",
-  "homepage": "https://github.com/owner/project#readme",
+  "homepage": "https://github.com/danielschwartz85/garmin-run-fetch",
   "license": "ISC",
   "prepublishOnly":"npm version patch",
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/npm/cli.git"
+    "url" : "https://github.com/danielschwartz85/garmin-run-fetch.git"
   },
   "dependencies": {
     "debug": "^4.3.1",
