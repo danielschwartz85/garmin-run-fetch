@@ -1,6 +1,6 @@
 {
   "name": "garmin-run-fetch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Tool for fetching Garmin run activities",
   "main": "main.js",
   "bin": "main.js",
