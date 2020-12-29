@@ -4,12 +4,12 @@ Performes a one time login with [puppeteer]((https://developers.google.com/web/t
 
 <br/>
 
-## Install:
+## Install
 ```
 npm i garmin-run-fetch
 ```
 
-## Run:
+## Run
 ```
 USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
 
