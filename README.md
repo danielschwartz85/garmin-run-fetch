@@ -21,5 +21,5 @@ USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
 | [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging |
 
 ## Notes
-* This creates a .cred.json file with garmin credentials for avoiding login with every run (the file can be deleted between runs).
-* The login is done with scrapping the [Garmin Connect](https://connect.garmin.com/signin/) page
+* This creates a .cred.json file with garmin credentials for avoiding login with every run (the file can be deleted in between runs).
+* The login is done with scrapping the [Garmin Connect](https://connect.garmin.com/signin/) using by [puppeteer](https://developers.google.com/web/tools/puppeteer).
