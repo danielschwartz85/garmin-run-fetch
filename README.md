@@ -1,6 +1,6 @@
 # Garmin Run Fetch
 #### Retrieves [Garmin Connect]((https://connect.garmin.com/signin/)) run activity data.
-#### Performes a one time login with [puppeteer]((https://developers.google.com/web/tools/puppeteer)) for the credentials, the credentials are then kept between runs and update only if needed.
+#### Performes a one time login with [puppeteer]((https://developers.google.com/web/tools/puppeteer)) for the credentials which are then kept between runs and are updated only if needed.
 <br/>
 
 ## Install:
@@ -11,6 +11,8 @@ npm i garmin-run-fetch
 ## Run:
 ```
 USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
+
+// Output activity json to console ...
 ```
 
 ## Env vars
