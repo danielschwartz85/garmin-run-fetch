@@ -1,6 +1,6 @@
 // const debug = require('debug')('garmin:activity');
 const fetch = require('node-fetch');
-const config = require('./config');
+const config = require('../config');
 
 async function fetchActivity(cookies) {
   const cookieString = cookies.map((c) => `${c.name}=${c.value}`).join('; ');

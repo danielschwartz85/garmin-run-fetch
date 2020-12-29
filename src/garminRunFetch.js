@@ -1,6 +1,6 @@
 require('dotenv').config();
 const debug = require('debug')('garmin:main');
-const config = require('./config');
+const config = require('../config');
 const loginAndGetCookies = require('./loginAndGetCookies');
 const writeJson = require('./writeJson');
 const readJson = require('./readJson');
