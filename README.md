@@ -14,7 +14,7 @@ USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
 ## Env vars
 
 | name | Desc |
-| :------------- | :----------: | -----------: |
+| ------------- | ------------- |
 | `USER_NAME`| Garmin connect user email |
 | `PASSWORD` | Garmin connect user password |
 | `ACTIVITY_FILE_PATH` | (Optional) Set with result file path, if not given the result is printed to console. |
