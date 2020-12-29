@@ -1,0 +1,31 @@
+{
+  "name": "garmin-run-fetch",
+  "version": "1.0.1",
+  "description": "",
+  "main": "main.js",
+  "bin": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./main.js"
+  },
+  "keywords": ["garmin", "connect", "run", "scrapping", "data", "activity", "api"],
+  "author": "Daniel Schwartz",
+  "homepage": "https://github.com/owner/project#readme",
+  "license": "ISC",
+  "prepublishOnly":"npm version patch",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/npm/cli.git"
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
