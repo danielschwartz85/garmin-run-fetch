@@ -31,6 +31,9 @@ async function garminRunFetch() {
     response = await fetchActivity(cookies);
   }
 
+  if (isInvalidCredentials(response)) {
+    throw new Error(`Failed to get activities ${response}`);
+  }
   debug('got activities');
   return response;
 }
