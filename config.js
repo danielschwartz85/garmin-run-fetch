@@ -6,5 +6,5 @@ module.exports = {
   submitSelector: 'button[type="submit"]',
   homeSelector: '.connect-container',
   credentialsPath: '.cred.json',
-  activityUrl: 'https://connect.garmin.com/modern/proxy/activitylist-service/activities/search/activities?activityType=running&limit=200&start=0',
+  activityUrl: 'https://connect.garmin.com/modern/proxy/activitylist-service/activities/search/activities?activityType=running&limit=<limit>&start=<startDate>&_=<endDate>',
 };

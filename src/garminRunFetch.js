@@ -8,31 +8,31 @@ const fetchActivity = require('./fetchActivity');
 const isInvalidCredentials = require('./isInvalidCredentials');
 const presult = require('./presult');
 
-async function getAndSaveCookies() {
+async function getAndSaveCookies(opts) {
   debug('getting cookies');
-  const cookies = await loginAndGetCookies(config);
+  const cookies = await loginAndGetCookies(opts);
   debug('writing cookies');
   writeJson(config.credentialsPath, cookies);
   return cookies;
 }
 
-async function garminRunFetch() {
+async function garminRunFetch(opts) {
   let [cookies] = await presult(readJson(config.credentialsPath));
   if (!cookies) {
-    cookies = await getAndSaveCookies();
+    cookies = await getAndSaveCookies(opts);
   }
 
   debug('getting activities');
 
-  let response = await fetchActivity(cookies);
+  let response = await fetchActivity(cookies, opts);
   if (isInvalidCredentials(response)) {
     debug('invalid credentials, retrying login.');
-    cookies = await getAndSaveCookies();
-    response = await fetchActivity(cookies);
+    cookies = await getAndSaveCookies(opts);
+    response = await fetchActivity(cookies, opts);
   }
 
-  if (isInvalidCredentials(response)) {
-    throw new Error(`Failed to get activities ${response}`);
+  if (response.error) {
+    throw new Error(`Failed to get activities ${response.error} ${response.message}`);
   }
   debug('got activities');
   return response;

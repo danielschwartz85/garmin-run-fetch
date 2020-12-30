@@ -1,19 +1,22 @@
 const puppeteer = require('puppeteer');
 const debug = require('debug')('garmin:login');
+const config = require('../config');
 
-async function loginAndGetCookies({
+const {
   userNameSelector,
   passwordSelector,
   url,
   frameSelector,
   submitSelector,
   homeSelector,
-}) {
-  if (!process.env.USER_NAME || !process.env.PASSWORD) {
-    throw new Error("Missing env variables 'USER_NAME' or 'PASSWORD'!");
+} = config;
+
+async function loginAndGetCookies({ userName, password }) {
+  if (!userName || !password) {
+    throw new Error("Missing 'userName' or 'password'!");
   }
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.goto(url);
 
@@ -41,7 +44,7 @@ async function loginAndGetCookies({
     userNameInput.value = userName;
     passwordInput.value = password;
     button.click();
-  }, process.env.USER_NAME, process.env.PASSWORD, loginSelector, submitSelector);
+  }, userName, password, loginSelector, submitSelector);
 
   debug('credentials are set');
 

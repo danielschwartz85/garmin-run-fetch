@@ -9,9 +9,24 @@
 npm i garmin-run-fetch
 ```
 
-## Run
+### Option 1:  
+Require module
 ```
-USER_NAME=daniel@gmail.com PASSWORD=123456 npx garmin-run-fetch
+const garminRunFetch = require('garmin-run-fetch');
+const opts = {
+    userName,
+    password,
+    limit,     // optional
+    startDate, // optional
+    endDate,   // optional
+};
+const activitiesJson = await garminRunFetch(opts);
+```
+
+### Option 2:  
+Command line
+```
+GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 
 // Output activity json to console ...
 ```
@@ -20,12 +35,17 @@ USER_NAME=daniel@gmail.com PASSWORD=123456 npx garmin-run-fetch
 
 ## Env vars
 
-| name | Desc |
-| ------------- | ------------- |
-| `USER_NAME`| Garmin connect user email |
-| `PASSWORD` | Garmin connect user password |
-| `ACTIVITY_FILE_PATH` | (Optional) Set with result file path, if not given the result is printed to console. |
-| [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging |
+| name | desc | default
+| ------------- | ------------- | -------- |
+| `GARMIN_USER_NAME`| Garmin connect user email | - |
+| `GARMIN_PASSWORD` | Garmin connect user password | - |
+| `GARMIN_LIMIT` | number of activities to fetch | 20 |
+| `GARMIN_START_DATE` | fetch activitiess only older than this value, a UNIX epoch number. | 0 |
+| `GARMIN_END_DATE` | fetch activitiess only created before this value, a UNIX epoch number. | 0 |
+| `GARMIN_RESULT_PATH` | (Optional) Set with result file path, if not given the result is printed to console. | - |
+| [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging | - |
+
+<br/>
 
 ## Notes
 * This app creates a `.cred.json` file with garmin credentials for avoiding a login with every run (the file can be deleted in between runs).
