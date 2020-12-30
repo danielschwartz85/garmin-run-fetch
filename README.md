@@ -39,9 +39,9 @@ GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 | -- | ------------- | ------------- | -------- |
 | userName | `GARMIN_USER_NAME`| Garmin connect user email | - |
 | password | `GARMIN_PASSWORD` | Garmin connect user password | - |
-| limit | `GARMIN_LIMIT` | number of activities to fetch | 20 |
-| starDate | `GARMIN_START_DATE` | fetch activitiess only older than this value, a UNIX epoch number. | 0 |
-| endDate | `GARMIN_END_DATE` | fetch activitiess only created before this value, a UNIX epoch number. | 0 |
+| limit | `GARMIN_LIMIT` | (Optional) number of activities to fetch | 20 |
+| starDate | `GARMIN_START_DATE` | (Optional) fetch activitiess only older than this value, a UNIX epoch number. | 0 |
+| endDate | `GARMIN_END_DATE` | (Optional) fetch activitiess only created before this value, a UNIX epoch number. | 0 |
 | - |`GARMIN_RESULT_PATH` | (Optional) Set with result file path, if not given the result is printed to console. | - |
 | - | [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging | - |
 
