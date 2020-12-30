@@ -1,6 +1,6 @@
 # Garmin Run Fetch
-#### Retrieves [Garmin Connect]((https://connect.garmin.com/signin/)) run activity data.
-Performes a one time login with [puppeteer]((https://developers.google.com/web/tools/puppeteer)) for the credentials which are then kept between runs and are updated only if needed.
+#### Retrieves [Garmin Connect]((https://connect.garmin.com/signin/)) run activity data. 
+#### Performes a one time login with [puppeteer]((https://developers.google.com/web/tools/puppeteer)) for the credentials which are then kept between runs and are updated only if needed.
 
 <br/>
 
@@ -11,7 +11,7 @@ npm i garmin-run-fetch
 
 ## Run
 ```
-USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
+USER_NAME=daniel@gmail.com PASSWORD=123456 npx garmin-run-fetch
 
 // Output activity json to console ...
 ```
@@ -28,5 +28,5 @@ USER_NAME=danielsch@gmail.com PASSWORD=123456 npx garmin-run-fetch
 | [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging |
 
 ## Notes
-* This app creates a `.cred.json` file with garmin credentials for avoiding login with every run (the file can be deleted in between runs).
-* The login is done with scrapping the [Garmin Connect](https://connect.garmin.com/signin/) by using [puppeteer](https://developers.google.com/web/tools/puppeteer).
+* This app creates a `.cred.json` file with garmin credentials for avoiding a login with every run (the file can be deleted in between runs).
+* The login is done with scrapping the [Garmin Connect](https://connect.garmin.com/signin/) web page by using [puppeteer](https://developers.google.com/web/tools/puppeteer).
