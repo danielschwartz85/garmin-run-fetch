@@ -16,7 +16,7 @@ async function loginAndGetCookies({ userName, password }) {
     throw new Error("Missing 'userName' or 'password'!");
   }
 
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(url);
 
