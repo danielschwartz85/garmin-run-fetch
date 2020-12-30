@@ -33,17 +33,17 @@ GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 
 <br/>
 
-## Env vars
+## Params
 
-| name | desc | default
-| ------------- | ------------- | -------- |
-| `GARMIN_USER_NAME`| Garmin connect user email | - |
-| `GARMIN_PASSWORD` | Garmin connect user password | - |
-| `GARMIN_LIMIT` | number of activities to fetch | 20 |
-| `GARMIN_START_DATE` | fetch activitiess only older than this value, a UNIX epoch number. | 0 |
-| `GARMIN_END_DATE` | fetch activitiess only created before this value, a UNIX epoch number. | 0 |
-| `GARMIN_RESULT_PATH` | (Optional) Set with result file path, if not given the result is printed to console. | - |
-| [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging | - |
+| param | env var name | desc | default
+| -- | ------------- | ------------- | -------- |
+| userName | `GARMIN_USER_NAME`| Garmin connect user email | - |
+| password | `GARMIN_PASSWORD` | Garmin connect user password | - |
+| limit | `GARMIN_LIMIT` | number of activities to fetch | 20 |
+| starDate | `GARMIN_START_DATE` | fetch activitiess only older than this value, a UNIX epoch number. | 0 |
+| endDate | `GARMIN_END_DATE` | fetch activitiess only created before this value, a UNIX epoch number. | 0 |
+| - |`GARMIN_RESULT_PATH` | (Optional) Set with result file path, if not given the result is printed to console. | - |
+| - | [DEBUG](https://github.com/visionmedia/debug#readme) | (Optional) set as garmin:* for debugging | - |
 
 <br/>
 
