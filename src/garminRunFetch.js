@@ -2,8 +2,8 @@ require('dotenv').config();
 const debug = require('debug')('garmin:main');
 const config = require('../config');
 const loginAndGetCookies = require('./loginAndGetCookies');
-const writeJson = require('./writeJson');
-const readJson = require('./readJson');
+const writeCredentials = require('./writeCredentials');
+const readCredentials = require('./readCredentials');
 const fetchActivity = require('./fetchActivity');
 const isInvalidCredentials = require('./isInvalidCredentials');
 const presult = require('./presult');
@@ -12,13 +12,23 @@ async function getAndSaveCookies(opts) {
   debug('getting cookies');
   const cookies = await loginAndGetCookies(opts);
   debug('writing cookies');
-  writeJson(config.credentialsPath, cookies);
+  writeCredentials({
+    path: config.credentialsPath,
+    credentials: cookies,
+    key: opts.password,
+  });
   return cookies;
 }
 
 async function garminRunFetch(opts) {
-  let [cookies] = await presult(readJson(config.credentialsPath));
+  debug('looking for credentials file');
+  // eslint-disable-next-line prefer-const
+  let [cookies, err] = await presult(readCredentials({
+    path: config.credentialsPath,
+    key: opts.password,
+  }));
   if (!cookies) {
+    debug('credentials file not found:', err && err.message);
     cookies = await getAndSaveCookies(opts);
   }
 

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const writeJson = require('./writeJson');
 const garminRunFetch = require('./garminRunFetch');
 
 (async function run() {
@@ -11,10 +10,6 @@ const garminRunFetch = require('./garminRunFetch');
     endDate: process.env.GARMIN_END_DATE,
   };
   const response = await garminRunFetch(opts);
-  if (process.env.GARMIN_RESULT_PATH) {
-    await writeJson(process.env.GARMIN_RESULT_PATH, response);
-  } else {
-    // eslint-disable-next-line no-console
-    console.log(response);
-  }
+  // eslint-disable-next-line no-console
+  console.log(response);
 }());

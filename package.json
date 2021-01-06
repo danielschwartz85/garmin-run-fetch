@@ -1,12 +1,12 @@
 {
   "name": "garmin-run-fetch",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Fetch Garmin run activities",
   "main": "src/garminRunFetch.js",
   "bin": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/main.js"
+    "start": "DEBUG=garmin:* node src/main.js"
   },
   "keywords": ["garmin", "connect", "run", "scrapping", "data", "activity", "api"],
   "author": "Daniel Schwartz",
