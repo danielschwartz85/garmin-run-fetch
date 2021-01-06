@@ -9,8 +9,7 @@
 npm i garmin-run-fetch
 ```
 
-### Option 1:  
-Require module
+### Option 1 (require module):
 ```
 const garminRunFetch = require('garmin-run-fetch');
 const opts = {
@@ -23,8 +22,7 @@ const opts = {
 const activitiesJson = await garminRunFetch(opts);
 ```
 
-### Option 2:  
-Command line
+### Option 2 (command line):
 ```
 GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 
