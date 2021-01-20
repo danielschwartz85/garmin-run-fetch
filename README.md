@@ -4,12 +4,12 @@
 
 <br/>
 
-## Install
+### Install
 ```
 npm i garmin-run-fetch
 ```
 
-## Require module:
+### Require module:
 ```
 const garminRunFetch = require('garmin-run-fetch');
 const opts = {
@@ -22,7 +22,7 @@ const opts = {
 const activitiesJson = await garminRunFetch(opts);
 ```
 
-## Or use command line:
+### Or use command line:
 ```
 GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 
