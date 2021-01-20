@@ -1,8 +1,8 @@
-<br/>
 # Garmin Run Fetch
 ### Retrieves [Garmin Connect]((https://connect.garmin.com/signin/)) run activity data. 
 ### Performes a one time login with [puppeteer]((https://developers.google.com/web/tools/puppeteer)) for the credentials which are then kept (encrypted) between runs and are updated only if needed.
 
+<br/>
 
 ## Install
 ```
