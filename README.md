@@ -45,5 +45,5 @@ GARMIN_USER_NAME=daniel@gmail.com GARMIN_PASSWORD=123456 npx garmin-run-fetch
 <br/>
 
 ### Notes
-* This app creates a `.cred.json` (encrypted) file with garmin credentials for avoiding a login with every run, the file can be deleted in between runs.
+* This module creates a `.cred.json` file (which is encrypted) with your garmin credentials, this is done for avoiding a login with every run. The file can be deleted in between runs.
 * The login is done with scrapping the [Garmin Connect](https://connect.garmin.com/signin/) web page by using [puppeteer](https://developers.google.com/web/tools/puppeteer).
