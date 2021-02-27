@@ -11,6 +11,7 @@ async function fetchActivity(cookies, {
   const opts = {
     headers: {
       cookie: cookieString,
+      nk: 'NT',
     },
   };
   const url = config.activityUrl
