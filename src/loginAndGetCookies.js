@@ -18,6 +18,16 @@ async function loginAndGetCookies({ userName, password }) {
 
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
+
+  // emulate non-headless
+  // eslint-disable-next-line no-undef
+  const headlessUserAgent = await page.evaluate(() => navigator.userAgent);
+  const chromeUserAgent = headlessUserAgent.replace('HeadlessChrome', 'Chrome');
+  await page.setUserAgent(chromeUserAgent);
+  await page.setExtraHTTPHeaders({
+    'accept-language': 'en-US,en;q=0.8',
+  });
+
   await page.goto(url);
 
   // Wait for login frame :
